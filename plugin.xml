@@ -15,6 +15,17 @@
         <clobbers target="defaultMailPlugin" />
     </js-module>
 
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="DefaultMailPlugin">
+                <param name="android-package" value="com.fomenkoartjoms.cordova.plugin.DefaultMailPlugin"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/DefaultMailPlugin.java" target-dir="src/com/fomenkoartjoms/cordova/defaultmailplugin" />
+    </platform>
+
     <!-- browser -->
     <platform name="browser">
         <config-file target="config.xml" parent="/*">

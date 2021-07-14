@@ -22,7 +22,7 @@ var browser = require('cordova/platform');
 
 module.exports = {
     open: function (success, error) {
-        window.location.href = "mailto:";
+        window.open("mailto:");
         success();
     }
 };

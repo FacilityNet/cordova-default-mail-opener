@@ -1,4 +1,4 @@
-package com.fomenkoartjoms.cordova.plugin;
+package com.fomenkoartjoms.cordova.defaultmailplugin;
 // Cordova-required packages
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
