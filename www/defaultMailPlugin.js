@@ -20,14 +20,40 @@
 */
 
 var argscheck = require('cordova/argscheck');
+var channel = require('cordova/channel');
+var utils = require('cordova/utils');
 var exec = require('cordova/exec');
 
-function DefaultMailPlugin() {
+channel.createSticky('onCordovaInfoReady');
+// Tell cordova channel to wait on the CordovaInfoReady event
+channel.waitForInitialization('onCordovaInfoReady');
+
+/**
+ * This represents the mobile device, and provides properties for inspecting the model, version, UUID of the
+ * phone, etc.
+ * @constructor
+ */
+function DefaultMailPlugin () {
+    var me = this;
+    channel.onCordovaReady.subscribe(function () {
+        me.open(function (info) {
+            channel.onCordovaInfoReady.fire();
+        }, function (e) {
+            me.available = false;
+            utils.alert('[ERROR] Error initializing Cordova: ' + e);
+        });
+    });
 }
 
-DefaultMailPlugin.prototype.open = function (successCallback, errorCallback) {
-  argscheck.checkArgs('fF', 'DefaultMailPlugin.open', arguments);
-  exec(successCallback, errorCallback, 'DefaultMailPlugin', 'open', []);
+/**
+ * Get device info
+ *
+ * @param {Function} successCallback The function to call when the heading data is available
+ * @param {Function} errorCallback The function to call when there is an error getting the heading data. (OPTIONAL)
+ */
+ DefaultMailPlugin.prototype.open = function (successCallback, errorCallback) {
+    argscheck.checkArgs('fF', 'DefaultMailPlugin.open', arguments);
+    exec(successCallback, errorCallback, 'DefaultMailPlugin', 'open', []);
 };
 
 module.exports = new DefaultMailPlugin();

@@ -18,9 +18,14 @@
  * under the License.
  *
  */
+var browser = require('cordova/platform');
+
 module.exports = {
     open: function (success, error) {
-        window.location.href = "mailto:";
+        setTimeout(function () {
+            window.location.href = "mailto:";
+            success();
+        }, 0);
     }
 };
 
