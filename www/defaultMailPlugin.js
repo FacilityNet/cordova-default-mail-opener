@@ -19,7 +19,6 @@
  *
 */
 
-var argscheck = require('cordova/argscheck');
 var exec = require('cordova/exec');
 
 /**
@@ -37,7 +36,6 @@ function DefaultMailPlugin () {
  * @param {Function} errorCallback The function to call when there is an error getting the heading data. (OPTIONAL)
  */
  DefaultMailPlugin.prototype.open = function (successCallback, errorCallback) {
-    argscheck.checkArgs('fF', 'DefaultMailPlugin.open', arguments);
     exec(successCallback, errorCallback, 'DefaultMailPlugin', 'open', []);
 };
 
