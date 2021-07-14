@@ -15,16 +15,16 @@
         <engine name="cordova" version=">=3.0.0"/>
     </engines>
   
-    <js-module src="www/dmoplugin.js" name="dmoPlugin">
-        <clobbers target="window.plugins.dmoPlugin" />
+    <js-module src="www/defaultMailPlugin.js" name="DefaultMailPlugin">
+        <clobbers target="window.plugins.defaultMailPlugin" />
     </js-module>
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="ToastyPlugin">
-                <param name="android-package" value="com.stanleyidesis.cordova.plugin.ToastyPlugin"/>
+            <feature name="DefaultMailPlugin">
+                <param name="android-package" value="com.fomenkoartjoms.cordova.plugin.DefaultMailPlugin"/>
             </feature>
         </config-file>
 
-        <source-file src="src/android/ToastyPlugin.java" target-dir="src/com/stanleyidesis/cordova/plugin" />
+        <source-file src="src/android/DefaultMailPlugin.java" target-dir="src/com/fomenkoartjoms/cordova/plugin" />
     </platform>
 </plugin>

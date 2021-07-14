@@ -1,0 +1,36 @@
+{
+    "name": "cordova-default-mail-opener",
+    "version": "0.0.1",
+    "description": "An Android Cordova plugin that opens default email app.",
+    "cordova": {
+      "id": "cordova-default-mail-opener",
+      "platforms": [
+        "android",
+        "ios"
+      ]
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Fomenko-developer/cordova-default-mail-opener.git"
+    },
+    "keywords": [
+      "cordova",
+      "android",
+      "ios",
+      "default",
+      "email",
+      "nocomposer"
+    ],
+    "engines": [
+      {
+        "name": "cordova",
+        "version": ">=3.0.0"
+      }
+    ],
+    "author": "Artjoms Fomenko <developer.fomenko.artjoms@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/Fomenko-developer/cordova-default-mail-opener/issues"
+    },
+    "homepage": "https://github.com/Fomenko-developer/cordova-default-mail-opener"
+  }
