@@ -5,11 +5,4 @@ DefaultMailPlugin.prototype.open = function() {
   cordova.exec(successCallback, errorCallback, 'DefaultMailPlugin', 'open', [options]);
 }
 
-DefaultMailPlugin.install = function() {
-  if (!window.plugins) {
-    window.plugins = {};
-  }
-  window.plugins.defaultMailPlugin = new DefaultMailPlugin();
-  return window.plugins.defaultMailPlugin;
-};
-cordova.addConstructor(DefaultMailPlugin.install);
+module.exports = new DefaultMailPlugin();
