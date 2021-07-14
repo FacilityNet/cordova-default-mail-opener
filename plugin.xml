@@ -16,7 +16,7 @@
     </engines>
   
     <js-module src="www/defaultMailPlugin.js" name="DefaultMailPlugin">
-        <clobbers target="window.plugins.defaultMailPlugin" />
+        <clobbers target="DefaultMailPluginProxy" />
     </js-module>
 
     <!-- browser -->
