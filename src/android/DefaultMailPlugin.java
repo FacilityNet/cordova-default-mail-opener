@@ -6,6 +6,8 @@ import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import android.content.Intent;
+
 public class DefaultMailPlugin extends CordovaPlugin {
   @Override
   public boolean execute(String action, JSONArray args,
