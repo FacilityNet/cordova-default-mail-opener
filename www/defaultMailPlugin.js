@@ -20,12 +20,7 @@
 */
 
 var argscheck = require('cordova/argscheck');
-var channel = require('cordova/channel');
 var exec = require('cordova/exec');
-
-channel.createSticky('onCordovaInfoReady');
-// Tell cordova channel to wait on the CordovaInfoReady event
-channel.waitForInitialization('onCordovaInfoReady');
 
 /**
  * This represents the mobile device, and provides properties for inspecting the model, version, UUID of the
