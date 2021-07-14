@@ -18,6 +18,19 @@
     <js-module src="www/defaultMailPlugin.js" name="DefaultMailPlugin">
         <clobbers target="window.plugins.defaultMailPlugin" />
     </js-module>
+
+    <!-- browser -->
+    <platform name="browser">
+        <config-file target="config.xml" parent="/*">
+            <feature name="DefaultMailPlugin">
+                <param name="browser-package" value="DefaultMailPlugin"/>
+            </feature>
+        </config-file>
+        <js-module src="src/browser/DefaultMailPluginProxy.js" name="DefaultMailPlugin.Proxy">
+            <runs />
+        </js-module>
+    </platform>
+
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="DefaultMailPlugin">
