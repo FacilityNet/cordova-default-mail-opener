@@ -21,7 +21,6 @@
 
 var argscheck = require('cordova/argscheck');
 var channel = require('cordova/channel');
-var utils = require('cordova/utils');
 var exec = require('cordova/exec');
 
 channel.createSticky('onCordovaInfoReady');
@@ -34,15 +33,6 @@ channel.waitForInitialization('onCordovaInfoReady');
  * @constructor
  */
 function DefaultMailPlugin () {
-    var me = this;
-    channel.onCordovaReady.subscribe(function () {
-        me.open(function (info) {
-            channel.onCordovaInfoReady.fire();
-        }, function (e) {
-            me.available = false;
-            utils.alert('[ERROR] Error initializing Cordova: ' + e);
-        });
-    });
 }
 
 /**
