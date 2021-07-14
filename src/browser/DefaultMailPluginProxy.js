@@ -22,10 +22,8 @@ var browser = require('cordova/platform');
 
 module.exports = {
     open: function (success, error) {
-        setTimeout(function () {
-            window.location.href = "mailto:";
-            success();
-        }, 0);
+        window.location.href = "mailto:";
+        success();
     }
 };
 
