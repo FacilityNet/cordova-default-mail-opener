@@ -16,7 +16,7 @@ public class DefaultMailPlugin extends CordovaPlugin {
       Intent intent = new Intent(Intent.ACTION_MAIN);
       intent.addCategory(Intent.CATEGORY_APP_EMAIL);
       intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-      this.startActivity(intent);
+      this.cordova.getActivity().getApplicationContext().startActivity(intent);
       PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
       callbackContext.sendPluginResult(pluginResult);
       return true;
